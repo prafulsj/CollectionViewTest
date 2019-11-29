@@ -54,13 +54,16 @@
                                         </view>
                                         <constraints>
                                             <constraint firstItem="HPb-1U-b59" firstAttribute="leading" secondItem="ZAN-bc-ESS" secondAttribute="leading" constant="86" id="Gmj-tN-ghm"/>
+                                            <constraint firstItem="rqN-q7-hzH" firstAttribute="centerX" secondItem="ZAN-bc-ESS" secondAttribute="centerX" id="JbQ-nv-iXr"/>
                                             <constraint firstItem="rqN-q7-hzH" firstAttribute="top" secondItem="HPb-1U-b59" secondAttribute="bottom" constant="33" id="M0l-d1-bRG"/>
-                                            <constraint firstItem="rqN-q7-hzH" firstAttribute="leading" secondItem="ZAN-bc-ESS" secondAttribute="leading" constant="144" id="aZn-e7-gh7"/>
+                                            <constraint firstItem="rqN-q7-hzH" firstAttribute="leading" relation="lessThanOrEqual" secondItem="ZAN-bc-ESS" secondAttribute="leading" constant="144" id="aZn-e7-gh7"/>
                                             <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="BDA-1B-faq" secondAttribute="trailing" constant="176" id="ats-La-GeH"/>
                                             <constraint firstItem="BDA-1B-faq" firstAttribute="top" secondItem="rqN-q7-hzH" secondAttribute="bottom" constant="12" id="c00-5s-r8C"/>
                                             <constraint firstItem="BDA-1B-faq" firstAttribute="leading" relation="lessThanOrEqual" secondItem="ZAN-bc-ESS" secondAttribute="leading" constant="176" id="iGt-5c-ON7"/>
                                             <constraint firstAttribute="trailing" secondItem="HPb-1U-b59" secondAttribute="trailing" constant="86" id="jkJ-6c-yiA"/>
-                                            <constraint firstAttribute="trailing" secondItem="rqN-q7-hzH" secondAttribute="trailing" constant="144" id="p3i-Gd-Urd"/>
+                                            <constraint firstItem="HPb-1U-b59" firstAttribute="centerX" secondItem="ZAN-bc-ESS" secondAttribute="centerX" id="kYg-uo-4XI"/>
+                                            <constraint firstItem="BDA-1B-faq" firstAttribute="centerX" secondItem="ZAN-bc-ESS" secondAttribute="centerX" id="o7F-Ym-jdk"/>
+                                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="rqN-q7-hzH" secondAttribute="trailing" constant="144" id="p3i-Gd-Urd"/>
                                             <constraint firstAttribute="bottom" secondItem="BDA-1B-faq" secondAttribute="bottom" constant="33" id="rjE-Pt-X0p"/>
                                             <constraint firstItem="HPb-1U-b59" firstAttribute="top" secondItem="ZAN-bc-ESS" secondAttribute="top" id="yGV-Ta-gw8"/>
                                         </constraints>
