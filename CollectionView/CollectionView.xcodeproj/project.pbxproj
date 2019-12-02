@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F8B4F69423951EB000AD1C58 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B4F69323951EB000AD1C58 /* DataModel.swift */; };
+		F8B4F69623952CC500AD1C58 /* FeaturedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B4F69523952CC500AD1C58 /* FeaturedData.swift */; };
 		F8DDA6122390F2F0005BD148 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DDA6112390F2F0005BD148 /* AppDelegate.swift */; };
 		F8DDA6142390F2F0005BD148 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DDA6132390F2F0005BD148 /* ViewController.swift */; };
 		F8DDA6172390F2F0005BD148 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8DDA6152390F2F0005BD148 /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F8B4F69323951EB000AD1C58 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		F8B4F69523952CC500AD1C58 /* FeaturedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedData.swift; sourceTree = "<group>"; };
 		F8DDA60E2390F2F0005BD148 /* CollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8DDA6112390F2F0005BD148 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8DDA6132390F2F0005BD148 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 				F8DDA61D2390F2F1005BD148 /* Info.plist */,
 				F8DDA623239101E3005BD148 /* CollectionCellCollectionViewCell.swift */,
 				F8DDA62523915906005BD148 /* SectionHeader.swift */,
+				F8B4F69323951EB000AD1C58 /* DataModel.swift */,
+				F8B4F69523952CC500AD1C58 /* FeaturedData.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -141,10 +147,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8B4F69423951EB000AD1C58 /* DataModel.swift in Sources */,
 				F8DDA62623915906005BD148 /* SectionHeader.swift in Sources */,
 				F8DDA6142390F2F0005BD148 /* ViewController.swift in Sources */,
 				F8DDA624239101E3005BD148 /* CollectionCellCollectionViewCell.swift in Sources */,
 				F8DDA6122390F2F0005BD148 /* AppDelegate.swift in Sources */,
+				F8B4F69623952CC500AD1C58 /* FeaturedData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

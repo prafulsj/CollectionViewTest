@@ -12,14 +12,15 @@ class SectionHeader: UICollectionReusableView {
     var label: UILabel = {
         let label: UILabel = UILabel()
         label.textColor = UIColor.red
-        label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        label.font = UIFont.systemFont(ofSize: 26, weight: .semibold)
+        label.textAlignment = NSTextAlignment.center
         label.sizeToFit()
         label.text = "HEADER"
         return label
     }()
 
     override func awakeFromNib() {
-        self.backgroundColor = UIColor.green
+        self.backgroundColor = UIColor.cyan
 
         addSubview(label)
 

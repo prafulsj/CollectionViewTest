@@ -68,7 +68,9 @@
                                             <constraint firstItem="HPb-1U-b59" firstAttribute="top" secondItem="ZAN-bc-ESS" secondAttribute="top" constant="5" id="yGV-Ta-gw8"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="productImage" destination="HPb-1U-b59" id="Vhe-F3-i1g"/>
+                                            <outlet property="price" destination="BDA-1B-faq" id="mEc-Nb-4ef"/>
+                                            <outlet property="productImage" destination="HPb-1U-b59" id="sOa-9T-NnC"/>
+                                            <outlet property="title" destination="rqN-q7-hzH" id="vRV-s6-SMO"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -91,6 +93,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Zdw-zE-2Ue"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="pQl-Mv-fiV" id="eKf-Vj-eNA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8vh-HF-ttC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

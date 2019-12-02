@@ -13,25 +13,40 @@ class ViewController: UIViewController {
     private let sectionInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     private let numberOfItemInRow: CGFloat = 2
 
+    let dataModel = DataModel()
+
+    @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        dataModel.fetchData {
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+
+        }
     }
 }
 
 extension ViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 5
+        return self.dataModel.featuredDataDict.count
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return self.dataModel.featuredDataDictCount[section]
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionCellCollectionViewCell
 
-        cell.productImage.backgroundColor = UIColor.cyan
-        cell.backgroundColor = UIColor.lightGray
+        if !self.dataModel.featuredData.isEmpty {
+//            let featuredData = self.dataModel.featuredData[indexPath.row]
+            let key = self.dataModel.featuredDataDictKey[indexPath.section]
+
+            if let featuredData = self.dataModel.featuredDataDict[key]?[indexPath.row] {
+                cell.updateCell(data: featuredData)
+            }
+        }
 
         return cell
     }
@@ -46,18 +61,14 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDe
         return CGSize(width: width / numberOfItemInRow, height: collectionView.cellForItem(at: indexPath)?.frame.height ?? 250)
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return sectionInsets
-    }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 100
+        return sectionInsets.top
     }
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
             let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "SectionHeader", for: indexPath) as! SectionHeader
-//            sectionHeader.updateHeader(title: "HEADER")
             return sectionHeader
         }
 
@@ -65,6 +76,6 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDe
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 60)
+        return CGSize(width: collectionView.frame.width, height: 40)
     }
 }

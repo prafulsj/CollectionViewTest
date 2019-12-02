@@ -11,6 +11,26 @@ import UIKit
 class CollectionCellCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var productImage: UIImageView!
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var price: UILabel!
 
+    func updateCell(data: FeaturedData) {
+        title.text = data.brandName
+        price.text = data.price
 
+        guard let url = data.imageUrl, let imageUrl = URL(string: url) else {
+            return
+        }
+
+        let imageUrlSession = URLSession.shared.dataTask(with: imageUrl) { (data, _, _) in
+            if let data = data {
+                let image = UIImage(data: data)
+                DispatchQueue.main.async {
+                    self.productImage.image = image
+                }
+            }
+        }
+
+        imageUrlSession.resume()
+    }
 }
