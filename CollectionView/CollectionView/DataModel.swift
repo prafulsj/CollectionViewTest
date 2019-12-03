@@ -79,7 +79,7 @@ class DataModel: NSObject {
                 id: featuredDataDict?["id"] as? Int,
                 price: featuredDataDict?["final_price"] as? String,
                 imageUrl: featuredDataDict?["image"] as? String,
-                brandName: featuredDataDict?["brand_name"] as? String)
+                brandName: featuredDataDict?["name"] as? String)
 
             self.featuredData.append(newFeaturedData)
         }
