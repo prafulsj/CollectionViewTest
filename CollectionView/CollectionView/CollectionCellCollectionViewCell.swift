@@ -14,6 +14,9 @@ class CollectionCellCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var price: UILabel!
 
+    var downloadedImage: UIImage? = nil
+
+
     func updateCell(data: FeaturedData) {
         title.text = data.brandName
         price.text = data.price
@@ -22,15 +25,20 @@ class CollectionCellCollectionViewCell: UICollectionViewCell {
             return
         }
 
-        let imageUrlSession = URLSession.shared.dataTask(with: imageUrl) { (data, _, _) in
-            if let data = data {
-                let image = UIImage(data: data)
-                DispatchQueue.main.async {
-                    self.productImage.image = image
+        if downloadedImage == nil {
+            let imageUrlSession = URLSession.shared.dataTask(with: imageUrl) { (data, _, _) in
+                if let data = data {
+                    self.downloadedImage = UIImage(data: data)
+                    DispatchQueue.main.async {
+                        self.productImage.image = self.downloadedImage
+                    }
                 }
             }
+
+            imageUrlSession.resume()
+        } else {
+            self.productImage.image = self.downloadedImage
         }
 
-        imageUrlSession.resume()
     }
 }
